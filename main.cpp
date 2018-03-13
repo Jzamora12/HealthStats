@@ -9,12 +9,18 @@ int main()
     vector <int> bpm;
     vector <int> steps;
     vector <int> calories;
+    int heartRate;
     
-    //bpm.resize(10);
-    bpm.push_back(90);
-    bpm.push_back(100);
-    bpm.push_back(70);
-    
+    do 
+    {
+        cout<<"Please enter in heart rate reading (in beats per minutes, or -1 to quit): "; 
+        cin>>heartRate; 
+        bpm.push_back(heartRate);
+    }while( heartRate != -1 ); 
+
+    bpm.pop_back(); // used to get rid of -1 which is only used to stop the loop. 
+
+ 
     cout<< "bpm size is currently size "<<bpm.size()<<endl;
     cout<< "The last item in bpm is... "<<bpm[ bpm.size()-1 ]<<endl;
     cout<< "The items in the list are...\n";
